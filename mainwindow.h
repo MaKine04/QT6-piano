@@ -1,87 +1,47 @@
-#include "mainwindow.h"
-#include "./ui_mainwindow.h"
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <qfiledialog.h>
 #include <QSoundEffect>
-#include "sound.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-
-    , ui(new Ui::MainWindow)
-{
-
-    ui->setupUi(this);
-    setFixedSize(600, 250);
+QT_BEGIN_NAMESPACE
+namespace Ui {
+class MainWindow;
 }
+QT_END_NAMESPACE
 
-MainWindow::~MainWindow()
+class MainWindow : public QMainWindow
 {
-    delete ui;
-}
+    Q_OBJECT
 
-void MainWindow::key1_click()
-{
-    QString track = "c7.wav";
-    playsound(track);
-}
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
 
+private slots:
 
-void MainWindow::key2_click()
-{
-    QString track = "c8.wav";
-    playsound(track);
-}
+    void key1_click();
 
+    void key2_click();
 
-void MainWindow::key3_click()
-{
-    QString track = "c9.wav";
-    playsound(track);
-}
+    void key3_click();
 
+    void key4_click();
 
-void MainWindow::key4_click()
-{
-    QString track = "c10.wav";
-    playsound(track);
-}
+    void key5_click();
 
+    void key6_click();
 
+    void key7_click();
 
-void MainWindow::key5_click()
-{
-    QString track = "c11.wav";
-    playsound(track);
-}
+    void key8_click();
 
+    void key9_click();
 
-void MainWindow::key6_click()
-{
-    QString track = "c12.wav";
-    playsound(track);
-}
+    void key10_click();
 
-void MainWindow::key7_click()
-{
-    QString track = "c13.wav";
-    playsound(track);
-}
-
-
-void MainWindow::key8_click()
-{
-    QString track = "c14.wav";
-    playsound(track);
-}
-
-void MainWindow::key9_click()
-{
-    QString track = "c15.wav";
-    playsound(track);
-}
-
-void MainWindow::key10_click()
-{
-    QString track = "c16.wav";
-    playsound(track);
-}
-
+private:
+    Ui::MainWindow *ui;
+};
+#endif // MAINWINDOW_H
